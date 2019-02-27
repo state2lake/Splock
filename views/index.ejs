@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <title>ReviewU - Restaurant Review Management Software</title>
+  <meta name="viewport" content=" width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" type="text/css" href="theme.css" media="screen"/>-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">ReviewU</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="survey-page.html">Features</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" placeholder="Search" type="text">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <script>
+    //validation to assure no blank text fields
+    function validateInput() {
+      var first = document.forms["userInfoForm"]["exampleInputFirstName"].value;
+      var last = document.forms["userInfoForm"]["exampleInputLastName"].value;
+      var email = document.forms["userInfoForm"]["exampleInputEmail"].value;
+      var age = document.forms["userInfoForm"]["exampleInputAge"].value;
+      var phone = document.forms["userInfoForm"]["exampleInputPhone"].value;
+
+      if(first == "") {
+        alert("Oops, it looks like First Name was left blank");
+        return false;
+      }
+      else if(last == "") {
+        alert("Oops, it looks like Last Name was left blank");
+        return false;
+      }else if(email == ""){
+        alert("Oops, it looks like Email was left blank");
+        return false;
+      }else if (age == "") {
+        alert("Oops, it looks like Age was left blank");
+        return false;
+      }else if(phone.size != 7) {
+        alert("Oops, that's not a valid phone number")
+      }
+    }
+
+
+  </script>
+
+</head>
+<body>
+
+
+<form name="userInfoForm" method="post" action="/addname">
+  <fieldset>
+    <br>
+    <br>
+    <div id="dontbeshy">
+      <p >Don't be shy, leave a review! First, all we need are a few things. </p>
+      <small>Generic promo feature/giveaway add</small>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="form-group">
+      <!--<small id="emailHelp" class="form-text text-muted">*We'll never share your data with anyone else.</small>-->
+      <label for="exampleInputEmail1">First Name*</label>
+      <!--<span class="tooltiptextFirst"><li>Required Input</li></span>-->
+      <input  name="firstName" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Enter your first name">
+
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name* </label>
+      <!--<span class="tooltiptextLast"><li>Required Input</li></span>-->
+      <input  class="form-control" name="lastName" id="exampleInputLastName" placeholder="Enter your last name" >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Email* </label>
+      <!--<span class="tooltiptextEmail">-->
+      <!--<li>Required Input</li>-->
+      <!--<li>Must include '@' symbol</li>-->
+      <!--<li>Must include '.com'</li>-->
+      <!--<li>Must include a valid email provider</li>-->
+      <!--</span>-->
+      <input class="form-control" name="email" id="exampleInputEmail" placeholder="Enter your email" type="email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone</label>
+      <input name="phone" class="form-control" id="exampleInputPhone" placeholder="Enter your phone number" >
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Age*</label>
+      <input name="age" class="form-control" id="exampleInputAge" placeholder="Enter your age" >
+    </div>
+
+
+    <button id="primary-submit" type="submit" class="btn btn-primary">Submit</button>
+
+  </fieldset>
+
+</form>
+
+
+
+</body>
+</html>
