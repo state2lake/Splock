@@ -1,6 +1,119 @@
 <!DOCTYPE html>
 <html>
-<a href="/">Home</a>
-<h1>This page will be the review page! </h1>
+<head>
+    <!------ link, script, script should always be included in your head tag ---------->
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><b>ReviewU</b></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" placeholder="Search" type="text">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+</head>
+
+<body>
+<div id="main-div">
+    <div id="question-text-1">1. How likely is it that you would recommend this restaurant to a friend or colleague? </div>
+
+
+
+    <fieldset class="rating">
+        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+    </fieldset>
+
+
+
+
+    <div id="question-text-2">
+        2. Overall, how satisfied or dissatisfied are you with our restaurant?
+
+    <fieldset>
+
+        <div class="container">
+            <input type="radio" id="f-option" name="selector">
+            <label for="f-option">Very Satisfied</label>
+
+            <div class="check"></div>
+
+
+
+            <input type="radio" id="s-option" name="selector">
+            <label for="s-option">Somewhat Satisfied</label>
+
+            <div class="check"><div class="inside"></div></div>
+
+
+
+
+            <input type="radio" id="t-option" name="selector">
+            <label for="t-option">Neither Satisfied nor Disatisfied</label>
+
+            <div class="check"><div class="inside"></div></div>
+
+
+
+            <input type="radio" id="u-option" name="selector">
+            <label for="t-option">Somewhat Disatisfied</label>
+
+            <div class="check"><div class="inside"></div></div>
+
+            <input type="radio" id="v-option" name="selector">
+            <label for="t-option">Very Disatisfied</label>
+
+            <div class="check"><div class="inside"></div></div>
+            </ul>
+        </div>
+    </div>
+        <button id="primary-submit" type="submit" class="btn btn-primary">Submit</button>
+</div>
+</body>
+<style>
+    #main-div {
+        margin-left: 25%;
+    }
+    #question-text-1 {
+        margin-top: 10%;
+    }
+    #question-text-2 {
+      padding-top: 65px;
+
+    }
+    #primary-submit {
+        margin-left: 25%;
+    }
+</style>
 </html>
