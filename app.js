@@ -7,6 +7,7 @@ var mongoose = require("mongoose");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
+var confirmRouter = require('./routes/confirmSurvey');
 var app = express();
 
 // view engine setup
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/about', aboutRouter);
+app.use('/confirmSurvey', confirmRouter);
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
@@ -53,7 +55,7 @@ mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/node-demo1");
 
 
-//schema
+//schema for the user
 var nameSchema = new mongoose.Schema({
     firstName: String,
     lastName: String,
@@ -62,9 +64,19 @@ var nameSchema = new mongoose.Schema({
     age:String
 });
 
+//schema for the survey
+var surveySchema = new mongoose.Schema({
+    rating: String,
+    selector:String
+
+});
+
+
 //variable 'User' to reference later
 var User = mongoose.model("User", nameSchema);
 
+//variable 'Survey' to reference later
+var Survey = mongoose.model("Survey", surveySchema);
 
 //post that data to the database
 app.post("/test-page", (req, res) => {
@@ -78,6 +90,18 @@ app.post("/test-page", (req, res) => {
         .catch(err => {
             res.status(400).send("unable to save to database");
         });
+});
+app.post("/rating-survey", (req,res) => {
+    var starRating = new Survey(req.body);
+    starRating.save()
+        .then(item => {
+        res.redirect('/confirmSurvey');
+
+    })
+        .catch(err => {
+        res.status(400).send("Fail");
+    });
+
 });
 
 

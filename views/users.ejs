@@ -7,6 +7,14 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script>
+        let fiveStar = document.forms["surveyForm"]["f-option"];
+        if(fiveStar.checked) {
+            five = fiveStar.text();
+        }
+    </script>
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"><b>ReviewU</b></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +45,10 @@
 </head>
 
 <body>
+
+<form  name="surveyForm" method="post" action="/rating-survey">
 <div id="main-div">
+
     <div id="question-text-1">1. How likely is it that you would recommend this restaurant to a friend or colleague? </div>
 
 
@@ -64,14 +75,15 @@
     <fieldset>
 
         <div class="container">
-            <input type="radio" id="f-option" name="selector">
-            <label for="f-option">Very Satisfied</label>
+            <input type="radio" id="f-option" name="selector" value="Very Satisfied">
+            <label name="selector1" for="f-option">Very Satisfied</label>
+
 
             <div class="check"></div>
 
 
 
-            <input type="radio" id="s-option" name="selector">
+            <input type="radio" id="s-option" name="selector" value="Somewhat Satisfied">
             <label for="s-option">Somewhat Satisfied</label>
 
             <div class="check"><div class="inside"></div></div>
@@ -79,27 +91,30 @@
 
 
 
-            <input type="radio" id="t-option" name="selector">
-            <label for="t-option">Neither Satisfied nor Disatisfied</label>
+            <input type="radio" id="t-option" name="selector" value="Neither Satisfied or Dissatisfied">
+            <label for="t-option">Neither Satisfied nor Dissatisfied</label>
 
             <div class="check"><div class="inside"></div></div>
 
 
 
-            <input type="radio" id="u-option" name="selector">
-            <label for="t-option">Somewhat Disatisfied</label>
+            <input type="radio" id="u-option" name="selector" value="Somewhat Dissatisfied">
+            <label for="t-option">Somewhat Dissatisfied</label>
 
             <div class="check"><div class="inside"></div></div>
 
-            <input type="radio" id="v-option" name="selector">
-            <label for="t-option">Very Disatisfied</label>
+            <input type="radio" id="v-option" name="selector" value="Very Dissatisfied">
+            <label for="t-option">Very Dissatisfied</label>
 
             <div class="check"><div class="inside"></div></div>
             </ul>
         </div>
+
+</fieldset>
     </div>
         <button id="primary-submit" type="submit" class="btn btn-primary">Submit</button>
 </div>
+</form>
 </body>
 <style>
     #main-div {
