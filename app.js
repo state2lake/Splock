@@ -9,6 +9,10 @@ var usersRouter = require('./routes/users');
 var aboutRouter = require('./routes/about');
 var confirmRouter = require('./routes/confirmSurvey');
 var app = express();
+var nodeMailer = require('nodemailer');
+
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -81,6 +85,7 @@ var Survey = mongoose.model("Survey", surveySchema);
 //post that data to the database
 app.post("/test-page", (req, res) => {
     var myData = new User(req.body);
+
     myData.save()
         .then(item => {
 
@@ -93,6 +98,28 @@ app.post("/test-page", (req, res) => {
 });
 app.post("/rating-survey", (req,res) => {
     var starRating = new Survey(req.body);
+    let transporter = nodeMailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'reviewRMS@gmail.com',
+            pass: 'reviewAdmin19'
+        }
+    });
+
+    const mailOptions = {
+        from: 'reviewrRMS@email.com', // sender address
+        to: 'jonc960@gmail.com', // list of receivers
+        subject: 'Thanks for your Review!', // Subject line
+        html: '<p> '// plain text body
+    };
+
+    transporter.sendMail(mailOptions, function (err, info) {
+        if(err)
+            console.log(err)
+        else
+            console.log(info);
+    });
+
     starRating.save()
         .then(item => {
         res.redirect('/confirmSurvey');
@@ -108,4 +135,8 @@ app.post("/rating-survey", (req,res) => {
 
 
 
-module.exports = app;
+
+
+
+
+    module.exports = app;

@@ -32,7 +32,8 @@
   </nav>
 
   <script>
-    //validation to assure no blank text fields
+
+    //validation to assure no invalid text fields
     function validateInput() {
       var first = document.forms["userInfoForm"]["exampleInputFirstName"].value;
       var last = document.forms["userInfoForm"]["exampleInputLastName"].value;
@@ -41,7 +42,9 @@
       var phone = document.forms["userInfoForm"]["exampleInputPhone"].value;
 
       if(first == "") {
+
         alert("Oops, it looks like First Name was left blank");
+
         return false;
       }
       else if(last == "") {
@@ -53,9 +56,11 @@
       }else if (age == "") {
         alert("Oops, it looks like Age was left blank");
         return false;
-      }else if(phone.size != 7) {
-        alert("Oops, that's not a valid phone number")
+      }else if(phone.length != 10 ) {
+        alert("It looks like that is not a valid phone number. Please try again");
+        return false;
       }
+     return true;
     }
 
 
@@ -65,7 +70,7 @@
 <body>
 
 
-<form name="userInfoForm" method="post" action="/test-page">
+<form name="userInfoForm" method="post" action="/test-page" onsubmit=" return validateInput();">
   <fieldset>
     <br>
     <br>
@@ -78,37 +83,37 @@
     <br>
     <div class="form-group">
       <!--<small id="emailHelp" class="form-text text-muted">*We'll never share your data with anyone else.</small>-->
-      <label for="exampleInputEmail1">First Name*</label>
+      <label for="exampleInputEmail1">First Name:*</label>
       <!--<span class="tooltiptextFirst"><li>Required Input</li></span>-->
       <input  name="firstName" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Enter your first name">
 
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Last Name* </label>
+      <label for="exampleInputPassword1">Last Name:* </label>
       <!--<span class="tooltiptextLast"><li>Required Input</li></span>-->
       <input  class="form-control" name="lastName" id="exampleInputLastName" placeholder="Enter your last name" >
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Email* </label>
+      <label for="exampleInputPassword1">Email:* </label>
       <!--<span class="tooltiptextEmail">-->
       <!--<li>Required Input</li>-->
       <!--<li>Must include '@' symbol</li>-->
       <!--<li>Must include '.com'</li>-->
       <!--<li>Must include a valid email provider</li>-->
       <!--</span>-->
-      <input class="form-control" name="email" id="exampleInputEmail" placeholder="Enter your email" type="email">
+      <input class="form-control" name="email" id="exampleInputEmail" placeholder="happycustomer@gmail.com" type="email">
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Phone</label>
-      <input name="phone" class="form-control" id="exampleInputPhone" placeholder="Enter your phone number" >
+      <label for="exampleInputPassword1">Phone:</label>
+      <input name="phone" class="form-control" id="exampleInputPhone" placeholder="7707654321" type="number" >
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Age*</label>
+      <label for="exampleInputPassword1">Age:*</label>
       <input name="age" class="form-control" id="exampleInputAge" placeholder="Enter your age" >
     </div>
 
 
-    <button id="primary-submit" type="submit" class="btn btn-primary" href="/users">Submit</button>
+    <button id="primary-submit" type="submit" class="btn btn-primary" >Next</button>
 
   </fieldset>
 
