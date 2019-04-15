@@ -108,7 +108,7 @@ app.post("/rating-survey", (req,res) => {
 
     const mailOptions = {
         from: 'reviewrRMS@email.com', // sender address
-        to: 'jonc960@gmail.com', // list of receivers
+        to: 'odanielkim1996@gmail.com', // list of receivers
         subject: 'Thanks for your Review!', // Subject line
         html: '<p> '// plain text body
     };

@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!------ link, script, script should always be included in your head tag ---------->
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!------ link, script, script should always be included in your head tag ---------->
+   <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script>
-        let fiveStar = document.forms["surveyForm"]["f-option"];
-        if(fiveStar.checked) {
-            five = fiveStar.text();
-        }
-    </script>
+   <script>
+       let fiveStar = document.forms["surveyForm"]["f-option"];
+       if(fiveStar.checked) {
+           five = fiveStar.text();
+       }
+   </script>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><b>ReviewU</b></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+       <a class="navbar-brand" href="#"><b>ReviewU</b></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
 
-        <div class="collapse navbar-collapse" id="navbarColor03">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
+       <div class="collapse navbar-collapse" id="navbarColor03">
+           <ul class="navbar-nav mr-auto">
+               <li class="nav-item active">
+                   <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="#">Features</a>
+               </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" placeholder="Search" type="text">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
+               <li class="nav-item">
+                   <a class="nav-link" href="/about">About Us</a>
+               </li>
+           </ul>
+           <form class="form-inline my-2 my-lg-0">
+               <input class="form-control mr-sm-2" placeholder="Search" type="text">
+               <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+           </form>
+       </div>
+   </nav>
 
 
 </head>
@@ -49,86 +49,394 @@
 <form  name="surveyForm" method="post" action="/rating-survey">
 <div id="main-div">
 
-    <div id="question-text-1">1. How likely is it that you would recommend this restaurant to a friend or colleague? </div>
+   <div id="question-text-1">1. How likely is it that you would recommend this restaurant to a friend or colleague? </div>
 
 
 
-    <fieldset class="rating">
-        <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
-        <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-        <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-        <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-        <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
-        <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-        <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-        <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-        <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-        <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-    </fieldset>
-
-
-
-
-    <div id="question-text-2">
-        2. Overall, how satisfied or dissatisfied are you with our restaurant?
-
-    <fieldset>
-
-        <div class="container">
-            <input type="radio" id="f-option" name="selector" value="Very Satisfied">
-            <label name="selector1" for="f-option">Very Satisfied</label>
-
-
-            <div class="check"></div>
-
-
-
-            <input type="radio" id="s-option" name="selector" value="Somewhat Satisfied">
-            <label for="s-option">Somewhat Satisfied</label>
-
-            <div class="check"><div class="inside"></div></div>
+   <fieldset class="rating">
+       <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+       <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+       <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+       <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+       <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+       <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+       <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+       <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+       <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+       <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+   </fieldset>
 
 
 
 
-            <input type="radio" id="t-option" name="selector" value="Neither Satisfied or Dissatisfied">
-            <label for="t-option">Neither Satisfied nor Dissatisfied</label>
+   <div id="question-text-2">
+       2. Overall, how satisfied or dissatisfied are you with our restaurant?
 
-            <div class="check"><div class="inside"></div></div>
+   <fieldset>
+
+       <div class="container">
+           <input type="radio" id="f-option" name="selector" value="Very Satisfied">
+           <label name="selector1" for="f-option">Very Satisfied</label>
+
+
+           <div class="check"></div>
 
 
 
-            <input type="radio" id="u-option" name="selector" value="Somewhat Dissatisfied">
-            <label for="t-option">Somewhat Dissatisfied</label>
+           <input type="radio" id="s-option" name="selector" value="Somewhat Satisfied">
+           <label for="s-option">Somewhat Satisfied</label>
 
-            <div class="check"><div class="inside"></div></div>
+           <div class="check"><div class="inside"></div></div>
 
-            <input type="radio" id="v-option" name="selector" value="Very Dissatisfied">
-            <label for="t-option">Very Dissatisfied</label>
 
-            <div class="check"><div class="inside"></div></div>
-            </ul>
-        </div>
 
+
+           <input type="radio" id="t-option" name="selector" value="Neither Satisfied or Dissatisfied">
+           <label for="t-option">Neither Satisfied nor Dissatisfied</label>
+
+           <div class="check"><div class="inside"></div></div>
+
+
+
+           <input type="radio" id="u-option" name="selector" value="Somewhat Dissatisfied">
+           <label for="t-option">Somewhat Dissatisfied</label>
+
+           <div class="check"><div class="inside"></div></div>
+
+           <input type="radio" id="v-option" name="selector" value="Very Dissatisfied">
+           <label for="t-option">Very Dissatisfied</label>
+
+           <div class="check"><div class="inside"></div></div>
+           </ul>
+       </div>
+      <br>
+
+    <div id="question-text-3">
+            3. Overall, how satisfied or dissatisfied are you with the speed at which the food was delivered?
+
+        <fieldset>
+
+            <div class="container">
+                <input type="radio" id="Q3f-option" name="selector" value="Very Satisfied">
+                <label name="selector1" for="Q3f-option">Very Satisfied</label>
+
+
+                <div class="check"></div>
+
+
+
+                <input type="radio" id="Q3s-option" name="selector" value="Somewhat Satisfied">
+                <label for="s-option">Somewhat Satisfied</label>
+
+                <div class="check"><div class="inside"></div></div>
+
+
+
+
+                <input type="radio" id="Q3t-option" name="selector" value="Neither Satisfied or Dissatisfied">
+                <label for="Q3t-option">Neither Satisfied nor Dissatisfied</label>
+
+                <div class="check"><div class="inside"></div></div>
+
+
+
+                <input type="radio" id="Q3u-option" name="selector" value="Somewhat Dissatisfied">
+                <label for="Q3t-option">Somewhat Dissatisfied</label>
+
+                <div class="check"><div class="inside"></div></div>
+
+                <input type="radio" id="Q3v-option" name="selector" value="Very Dissatisfied">
+                <label for="Q3t-option">Very Dissatisfied</label>
+
+                <div class="check"><div class="inside"></div></div>
+                </ul>
+            </div>
+     <br>
+
+        <div id="question-text-4">
+                4. Overall, how satisfied or dissatisfied are you with the quality of the food?
+
+            <fieldset>
+
+                <div class="container">
+                    <input type="radio" id="Q4f-option" name="selector" value="Very Satisfied">
+                    <label name="selector1" for="Q4f-option">Very Satisfied</label>
+
+
+                    <div class="check"></div>
+
+
+
+                    <input type="radio" id="Q4s-option" name="selector" value="Somewhat Satisfied">
+                    <label for="Q4s-option">Somewhat Satisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+
+
+
+                    <input type="radio" id="Q4t-option" name="selector" value="Neither Satisfied or Dissatisfied">
+                    <label for="Q4t-option">Neither Satisfied nor Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+
+
+                    <input type="radio" id="Q4u-option" name="selector" value="Somewhat Dissatisfied">
+                    <label for="Q4t-option">Somewhat Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+                    <input type="radio" id="Q4v-option" name="selector" value="Very Dissatisfied">
+                    <label for="Q4t-option">Very Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+                    </ul>
+                </div>
+   <br>
+
+        <div id="question-text-5">
+                5. Overall, how satisfied or dissatisfied are you with the service of our employees?
+
+            <fieldset>
+
+                <div class="container">
+                    <input type="radio" id="Q5f-option" name="selector" value="Very Satisfied">
+                    <label name="selector1" for="Q5f-option">Very Satisfied</label>
+
+
+                    <div class="check"></div>
+
+
+
+                    <input type="radio" id="Q5s-option" name="selector" value="Somewhat Satisfied">
+                    <label for="Q5s-option">Somewhat Satisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+
+
+
+                    <input type="radio" id="Q5t-option" name="selector" value="Neither Satisfied or Dissatisfied">
+                    <label for="Q5t-option">Neither Satisfied nor Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+
+
+                    <input type="radio" id="Q5u-option" name="selector" value="Somewhat Dissatisfied">
+                    <label for="Q5t-option">Somewhat Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+
+                    <input type="radio" id="Q5v-option" name="selector" value="Very Dissatisfied">
+                    <label for="Q5t-option">Very Dissatisfied</label>
+
+                    <div class="check"><div class="inside"></div></div>
+                    </ul>
+                </div>
+   <br>
+
+            <div id="question-text-6">
+                    6. Do you consider the price of our menu to be fair?
+
+                <fieldset>
+
+                    <div class="container">
+                        <input type="radio" id="Q6f-option" name="selector" value="Very Fair">
+                        <label name="selector1" for="Q6f-option">Very Fair</label>
+
+
+                        <div class="check"></div>
+
+
+
+                        <input type="radio" id="Q6s-option" name="selector" value="Somewhat Fair">
+                        <label for="Q6s-option">Somewhat Fair</label>
+
+                        <div class="check"><div class="inside"></div></div>
+
+
+
+
+                        <input type="radio" id="Q6t-option" name="selector" value=Fair">
+                        <label for="Q6t-option">Fair</label>
+
+                        <div class="check"><div class="inside"></div></div>
+
+
+
+                        <input type="radio" id="Q6u-option" name="selector" value="Somewhat Unfair">
+                        <label for="Q6t-option">Somewhat Fair</label>
+
+                        <div class="check"><div class="inside"></div></div>
+
+                        <input type="radio" id="Q6v-option" name="selector" value="Very Unfair">
+                        <label for="Q6t-option">Very Fair</label>
+
+                        <div class="check"><div class="inside"></div></div>
+                        </ul>
+                    </div>
+
+    <br>
+
+                <div id="question-text-7">
+                        7. Overall what word would you use to describe our restaurant?
+
+                    <fieldset>
+
+                        <div class="container">
+                            <input type="radio" id="Q7f-option" name="selector" value="Fast">
+                            <label name="selector1" for="Q7f-option">Fast</label>
+
+
+                            <div class="check"></div>
+
+
+
+                            <input type="radio" id="Q7s-option" name="selector" value="Good Service">
+                            <label for="Q7s-option">Good Service</label>
+
+                            <div class="check"><div class="inside"></div></div>
+
+
+
+
+                            <input type="radio" id="Q7t-option" name="selector" value=Good Food Quality">
+                            <label for="Q7t-option">Good Food Quality</label>
+
+                            <div class="check"><div class="inside"></div></div>
+
+
+
+                            <input type="radio" id="Q7u-option" name="selector" value="Diverse Menu ">
+                            <label for="Q7t-option">Diverse Menu</label>
+
+                            <div class="check"><div class="inside"></div></div>
+
+                            <input type="radio" id="Q7v-option" name="selector" value="Cheap">
+                            <label for="Q7t-option">Cheap</label>
+
+                            <div class="check"><div class="inside"></div></div>
+                            </ul>
+                        </div>
+     <br>
+
+                     <div id="question-text-8">
+                             8. Overall, how satisfied or dissatisfied are you with the cleanliness of our establishment?
+
+                         <fieldset>
+
+                             <div class="container">
+                                 <input type="radio" id="Q8f-option" name="selector" value="Very Satisfied">
+                                 <label name="selector1" for="Q8f-option">Very Satisfied</label>
+
+
+                                 <div class="check"></div>
+
+
+
+                                 <input type="radio" id="Q8s-option" name="selector" value="Somewhat Satisfied">
+                                 <label for="Q8s-option">Somewhat Satisfied</label>
+
+                                 <div class="check"><div class="inside"></div></div>
+
+
+
+
+                                 <input type="radio" id="Q8t-option" name="selector" value=Satisfied">
+                                 <label for="Q8t-option">Satisfied</label>
+
+                                 <div class="check"><div class="inside"></div></div>
+
+
+
+                                 <input type="radio" id="Q8u-option" name="selector" value="Somewhat Dissatisfied">
+                                 <label for="Q8t-option">Somewhat Dissatisfied</label>
+
+                                 <div class="check"><div class="inside"></div></div>
+
+                                 <input type="radio" id="Q8v-option" name="selector" value="Very Dissatisfied">
+                                 <label for="87t-option">Very Dissatisfied</label>
+
+                                 <div class="check"><div class="inside"></div></div>
+                                 </ul>
+                             </div>
+      <br>
+
+                      <div id="question-text-9">
+                              9. How likely are you to come back for a repeat visit?
+
+                          <fieldset>
+
+                              <div class="container">
+                                  <input type="radio" id="Q9f-option" name="selector" value="Very Likely">
+                                  <label name="selector1" for="Q9f-option">Very Likely</label>
+
+
+                                  <div class="check"></div>
+
+
+
+                                  <input type="radio" id="Q9s-option" name="selector" value="Somewhat Likely">
+                                  <label for="Q9s-option">Somewhat Likely</label>
+
+                                  <div class="check"><div class="inside"></div></div>
+
+
+
+
+                                  <input type="radio" id="Q9t-option" name="selector" value=Likely">
+                                  <label for="Q9t-option">Likely</label>
+
+                                  <div class="check"><div class="inside"></div></div>
+
+
+
+                                  <input type="radio" id="Q9u-option" name="selector" value="Somewhat Unlikely">
+                                  <label for="Q9t-option">Somewhat Unlikely</label>
+
+                                  <div class="check"><div class="inside"></div></div>
+
+                                  <input type="radio" id="Q9v-option" name="selector" value="Very Unlikely">
+                                  <label for="Q9t-option">Very Unlikely</label>
+
+                                  <div class="check"><div class="inside"></div></div>
+                                  </ul>
+                              </div>
+       <br>
+
+                       <div id="question-text-10">
+                               10. Do you have any additional comments or concerns?
+
+                           <fieldset>
+
+                               <div class="container">
+                                   <input type="TextBox" id="Q10f-option" name="selector" value="">
+
+
+                                   <div class="check"></div>
+
+                               </div>
 </fieldset>
-    </div>
-        <button id="primary-submit" type="submit" class="btn btn-primary">Submit</button>
+   </div>
+       <button id="primary-submit" type="submit" class="btn btn-primary">Submit</button>
 </div>
 </form>
 </body>
 <style>
-    #main-div {
-        margin-left: 25%;
-    }
-    #question-text-1 {
-        margin-top: 10%;
-    }
-    #question-text-2 {
-      padding-top: 65px;
+   #main-div {
+       margin-left: 25%;
+   }
+   #question-text-1 {
+       margin-top: 10%;
+   }
+   #question-text-2 {
+     padding-top: 65px;
 
-    }
-    #primary-submit {
-        margin-left: 25%;
-    }
+   }
+   #primary-submit {
+       margin-left: 25%;
+   }
 </style>
 </html>
